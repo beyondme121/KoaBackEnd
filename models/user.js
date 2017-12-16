@@ -1,10 +1,9 @@
 const db = require('../config/db.js')
-
-let sql = "select * from user where id=?"
+const sql = require('../sql/sql.js')
 
 const getUserById = async function (id) {
     const userInfo = 
-        await db.query(sql, { replacements: [id], type: db.QueryTypes.SELECT })
+        await db.query(sql.sqlUser, { replacements: [id], type: db.QueryTypes.SELECT })
                 .then((results) => {
                     console.log("--->",results)
                     return results
