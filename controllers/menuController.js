@@ -1,4 +1,4 @@
-const menu = require('../models/menu')
+const menu = require('../models/menu.js')
 
 const getAppNavigationHeader = async function (ctx) {
     const result = await menu.getAppNavigationHeader()

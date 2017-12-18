@@ -1,5 +1,5 @@
-const db = require('../config/db')
-const sql = require('../sql/sql')
+const db = require('../config/msdb.js')
+const sql = require('../sql/sql.js')
 
 const getAppNavigationHeader = async function () {
     const MenuInfo = await db.query(sql.getAppNavigationHeader,
