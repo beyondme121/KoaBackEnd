@@ -4,6 +4,7 @@ const Router = require('koa-router')
 const user = require('./routes/user.js')
 const customer = require('./routes/customer.js')
 const menu = require('./routes/menu.js')
+const subject = require('./routes/subject.js')
 const app = new Koa()
 const router = new Router()
 
@@ -17,6 +18,8 @@ app.use(async (ctx, next) => {
 router.use('/auth', user.routes())
 router.use('/api', customer.routes())
 router.use('/api', menu.routes())
+router.use('/api', subject.routes())
+
 
 app.use(router.routes()).use(router.allowedMethods())
 
